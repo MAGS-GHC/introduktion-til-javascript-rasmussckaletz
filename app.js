@@ -7,7 +7,7 @@ console.log(
 console.log("Hello World");
 
 
-console.log("----")
+console.log("\n----\n ")
 
 
 console.log("Opgave 1.2 - Lav et program, som skriver “Hello” og på næste linje skriver “World” i konsollen")
