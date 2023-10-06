@@ -73,25 +73,27 @@ gennemsnit(talrække7);
 */
 
 // Opgave 6.7
-let talrække7 = [0, 12, 0, 22, 300, 4, 5, 1000, -50, 32];
+let talrække8 = [0, 12, 0, 22, 300, 4, 5, 1000, -50, 32];
 function varians(talrækkeListe) {
     let talrækkeSum = 0;
-    let talrække7Gennemsnit = 0;
-    for (let index in talrækkeListe) {
-        talrækkeSum += talrækkeListe[index];
-        if (talrækkeListe.length === Number(index)+1) {
-            talrække7Gennemsnit = talrækkeSum / talrækkeListe.length;
-            console.log("Gennemsnit: " + talrække7Gennemsnit);
+    let talrække8Gennemsnit = 0;
+    for (let index in talrækkeListe) { // tjekker alle tal i talrækken
+        talrækkeSum += talrækkeListe[index]; // lægger tal i talrækkeSum variablen
+        if (talrækkeListe.length === Number(index)+1) { // tjekker om vi er ved slutningen af arrayen
+            talrække8Gennemsnit = talrækkeSum / talrækkeListe.length; // finder gennemsnit
+            console.log("Gennemsnit: " + talrække8Gennemsnit);
         }
     }
 
-    let talrække7Varians = 0;
-    for (let index in talrækkeListe) {
-        let mellemRegningVariabel = (talrækkeListe[index] - talrække7Gennemsnit) ** 2
-        talrække7Varians += mellemRegningVariabel;
+    let talrække8Varians = 0;
+    for (let index in talrækkeListe) { // tjekker alle tal i talrækken
+        let mellemRegningVariabel = (talrækkeListe[index] - talrække8Gennemsnit) ** 2 // laver en mellemregning på varians. vi tager tallet tilsvarende til indexet, 
+        //                                                                            minusser det med gennemsnittet og ganger det med sig selv. dette gør vi for alle tal i talrækken.
+        
+        talrække8Varians += mellemRegningVariabel; // lægger resultatet af mellemregningen oven i vores talrække8Varians variabel
     }
-    talrække7Varians = talrække7Varians / talrækkeListe.length;
-    console.log("Varians: " + talrække7Varians);
+    talrække8Varians = talrække8Varians / talrækkeListe.length; // dividerer talrække8Varians med talrækkens længde for at få den endelige varians, facit
+    console.log("Varians: " + talrække8Varians);
 }
 
-varians(talrække7);
+varians(talrække8);
