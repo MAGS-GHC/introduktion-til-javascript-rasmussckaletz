@@ -74,7 +74,7 @@ gennemsnit(talrække7);
 
 // Opgave 6.7
 let talrække8 = [0, 12, 0, 22, 300, 4, 5, 1000, -50, 32];
-function varians(talrækkeListe) {
+function variansUdregner(talrækkeListe) {
     let talrækkeSum = 0;
     let talrække8Gennemsnit = 0;
     for (let index in talrækkeListe) { // tjekker alle tal i talrækken
@@ -96,4 +96,4 @@ function varians(talrækkeListe) {
     console.log("Varians: " + talrække8Varians);
 }
 
-varians(talrække8);
+variansUdregner(talrække8);
