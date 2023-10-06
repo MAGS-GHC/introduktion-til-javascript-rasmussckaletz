@@ -70,7 +70,7 @@ function gennemsnit(talrækkeListe){
     }
 }
 gennemsnit(talrække7);
-*/
+
 
 // Opgave 6.7
 let talrække8 = [0, 12, 0, 22, 300, 4, 5, 1000, -50, 32];
@@ -97,3 +97,106 @@ function variansUdregner(talrækkeListe) {
 }
 
 variansUdregner(talrække8);
+
+
+// Opgave 6.8
+const person1 = {
+    firstName: "Anders",
+    lastName: "Andersen",
+    age: 29,
+    eyeColor: "grøn"
+};
+const person2 = {
+    firstName: "Mads",
+    lastName: "Madsen",
+    age: 32,
+    eyeColor: "blå"
+};
+const person3 = {
+    firstName: "Hans",
+    lastName: "Hansen",
+    age: 55,
+    eyeColor: "røde"
+};
+
+function personChecker(person) {
+    const accepteredeØjenfarver = ["blå", "grøn", "røde"];
+    if (person.age > 30 && accepteredeØjenfarver.includes(person.eyeColor)) {
+        console.log(person.firstName, person.lastName);
+        console.log(`Alder: ${person.age}`);
+        console.log(`Øjenfarve: ${person.eyeColor}`);
+    } 
+}
+personChecker(person1)
+
+
+// Opgave 6.9
+function stjernePattern(linjer) {
+
+    let linjerDeltITo = Math.ceil(linjer / 2);
+    
+    let stjernerStart = "";
+    for (let i = 1; i <= linjerDeltITo; i++) {
+        stjernerStart += "*";
+        console.log(stjernerStart);
+    }
+    
+    if (linjer % 2 === 0) {
+        console.log(stjernerStart)
+    }
+
+    for (let i = linjerDeltITo - 1; i >= 1; i--) {
+        stjernerStart = stjernerStart.slice(0, stjernerStart.length - 1);
+        console.log(stjernerStart);
+    }
+    
+
+}
+
+let antalLinjer = 6;
+stjernePattern(antalLinjer)
+*/
+
+// Opgave 6.10
+const object = {
+    array1: [2, 3, 19, 2, -1, -9, 10, 33],
+    array2: [3, 57, -8, 2, -21, -10, 11, 32],
+    array3: [100, -100, 200, -200, 10]
+};
+
+function objectArraysBeregninger(objectMedArrays) {
+    let arrayMedHøjesteGennemsnit = 0;
+    let hvilkenArrayMedHøjesteSnit = "";
+    let arrayMedLavesteVarians = Infinity;
+    let hvilkenArrayMedLavesteVarians = "";
+
+    for (let [key, value] of Object.entries(objectMedArrays)) {
+        let arraySum = value.reduce((accumulator, nuværendeVærdi) => accumulator + nuværendeVærdi);
+        let arraySnit = arraySum / value.length;
+        console.log(`\n${key} gennemsnit: ${arraySnit}`);
+
+        let varians = 0;
+
+        for (let index in value) {
+            varians += (value[index] - arraySnit) ** 2;
+        }
+
+        varians /= value.length;
+        console.log(`${key} varians: ${varians}\n`);
+
+        if (arraySnit > arrayMedHøjesteGennemsnit) {
+            arrayMedHøjesteGennemsnit = arraySnit;
+            hvilkenArrayMedHøjesteSnit = key;
+        }
+
+        if (varians < arrayMedLavesteVarians) {
+            arrayMedLavesteVarians = varians;
+            hvilkenArrayMedLavesteVarians = key;
+        }
+    }
+    console.log("\n----------------------");
+    console.log(`${hvilkenArrayMedHøjesteSnit} har det højeste gennemsnit på ${arrayMedHøjesteGennemsnit}`);
+    console.log(`${hvilkenArrayMedLavesteVarians} har den laveste varians på ${arrayMedLavesteVarians}`);
+}
+
+objectArraysBeregninger(object);
