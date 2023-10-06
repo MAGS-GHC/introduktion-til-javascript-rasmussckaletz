@@ -1,5 +1,5 @@
 // Array Loops
-/*
+
 // Opgave 6.1
 let talrække = [0, 12, 0, 22, 300, 4, 5];
 let sum = 0;
@@ -155,7 +155,7 @@ function stjernePattern(linjer) {
 
 let antalLinjer = 6;
 stjernePattern(antalLinjer)
-*/
+
 
 // Opgave 6.10
 const object = {
